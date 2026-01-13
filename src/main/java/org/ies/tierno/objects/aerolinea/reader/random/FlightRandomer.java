@@ -1,11 +1,11 @@
 package org.ies.tierno.objects.aerolinea.reader.random;
 
-import org.ies.tierno.objects.aerolinea.model.Passenger;
-import org.ies.tierno.objects.aerolinea.reader.PassengerReader;
+import org.ies.tierno.objects.aerolinea.model.Flight;
+import org.ies.tierno.objects.aerolinea.reader.FlightReader;
 
 import java.util.Random;
 
-public class PassengerRandomer implements PassengerReader {
+public class FlightRandomer implements FlightReader {
     private final static String[] NAMES = {
             // 21 [20]
             "Abigail", "Benito", "Celia", "David", "Emilia", "Fernando", "Gloria", "Hugo", "Isabel", "Juan", "Laura",
@@ -20,14 +20,14 @@ public class PassengerRandomer implements PassengerReader {
 
     private final Random random;
 
-    public PassengerRandomer (Random random) {
+    public FlightRandomer(Random random) {
         this.random = random;
     }
 
     @Override
-    public Passenger read () {
-        return new Passenger (
-                random.nextInt(10000, 100000) + "X",
+    public Flight read () {
+        return new Flight (
+                random.nextInt(1000, 9999),
                 NAMES[random.nextInt(NAMES.length)],
                 SURNAMES[random.nextInt(SURNAMES.length)],
                 random.nextInt(1, 200)
