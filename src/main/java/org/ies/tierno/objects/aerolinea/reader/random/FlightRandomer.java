@@ -15,9 +15,11 @@ public class FlightRandomer implements FlightReader {
     };
 
     private final Random random;
+    private final PassengerReader passengerReader;
 
-    public FlightRandomer(Random random) {
+    public FlightRandomer (Random random, PassengerReader passengerReader) {
         this.random = random;
+        this.passengerReader = passengerReader;
     }
 
     @Override
@@ -27,6 +29,12 @@ public class FlightRandomer implements FlightReader {
         do {
             destination = CITIES[random.nextInt(CITIES.length)];
         } while (destination.equals(origin));
+
+        Passenger[] passengers = new Passenger[random.nextInt(1, 200)];
+
+        for (int i = 0; i < passengers.length; i++) {
+            passengers[i] = passengerReader.read();
+        }
 
         return new Flight (
                 random.nextInt(1000, 9999),
