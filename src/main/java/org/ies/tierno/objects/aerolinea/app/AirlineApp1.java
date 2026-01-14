@@ -3,15 +3,16 @@ package org.ies.tierno.objects.aerolinea.app;
 import org.ies.tierno.objects.aerolinea.model.Airline;
 import org.ies.tierno.objects.aerolinea.model.Flight;
 import org.ies.tierno.objects.aerolinea.model.Passenger;
+import org.ies.tierno.objects.aerolinea.reader.AirlineReader;
 import org.ies.tierno.objects.aerolinea.reader.scanner.AirlineScannerer;
 
 import java.util.Scanner;
 
-public class AirlineApp1 {
+public class AirlineApp1 implements App {
     private final Scanner scanner;
-    private final AirlineScannerer airlineReader;
+    private final AirlineReader airlineReader;
 
-    public AirlineApp1 (Scanner scanner, AirlineScannerer airlineReader) {
+    public AirlineApp1 (Scanner scanner, AirlineReader airlineReader) {
         this.scanner = scanner;
         this.airlineReader = airlineReader;
     }

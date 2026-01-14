@@ -27,7 +27,7 @@ public class PassengerRandomer implements PassengerReader {
     @Override
     public Passenger read () {
         return new Passenger (
-                random.nextInt(10000, 100000) + "X",
+                random.nextInt(1000000, 99999999) + "X",
                 NAMES[random.nextInt(NAMES.length)],
                 SURNAMES[random.nextInt(SURNAMES.length)],
                 random.nextInt(1, 200)
